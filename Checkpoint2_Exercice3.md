@@ -48,6 +48,59 @@ Pour une configuration IP des ordinateurs en dynamique, il faut mettre tout les 
 | :-: | :-: | :-: | :-: | :-: |
 | 10.10.0.0 | 10.10.0.1 | 10.10.255.250 | 255.255.0.0 | 10.10.255.254 |
 
+## Q.3.11
+
+L'adresse MAC est `00:50:79:66:68:00` donc le `PC1`
+
+## Q.3.12
+
+La communication est reussi, c'est une requete de `PING` entre les `PC1` et `PC4` avec les adresses MAC `00:50:79:66:68:00` et `00:50:79:66:68:03` 
+
+## Q.3.13
+
+Le **request** est la requete de `PING` envoyé par l'ordinateur `PC1` avec la MAC `00:50:79:66:68:00` et l'IP `10.10.4.1`
+Le **reply** est la réponse de `PING` envoyé par l'ordinateur `PC4` avec la MAC `	00:50:79:66:68:03` et l'IP `10.10.4.2`
+
+## Q.3.15
+
+Dans cette communication le materiel `A` a fait transiter les informations entre les `PC1` et `PC4`
+Le materiel `B` n'a fait aucune action, car les requetes de ping ne lui étaient pas destinée
+
+## Q.3.16
+
+C'est le `PC3` qui initialise la communication avec l'IP `10.10.80.3`
+
+## Q.3.17 
+
+Le protocole encapsulé est `ICMP` il sert a faire des requetes de `PING`
+
+## Q.3.18
+
+La communication n'a réussi, car le `PC3` a un **CIDR** de `/16` et il cherche l'IP `10.11.80.2` qui n'est pas dans le même sous-reseau que lui
+
+## Q.3.19
+
+La ligne du paquet 2 indique que c'est la patte LAN du routeur qui répond avec l'IP `10.10.255.254`, étant donnée que l'adresse recherché n'est pas dans le même sous-réseau que le `PC3` il a tout logiquement redirigé la requête vers la passerelle `10.10.255.254`, sauf que l'IP recherché `10.11.80.2` n'est pas atteignable par l'IP de passerelle et n'est pas dans la table de routage. Donc la passerelle répond `Destination unreachable (Host unreachable)`
+
+## Q.3.20
+
+Dans cette communication le materiel `A` a fait transiter les informations entre les `PC3` et `B`
+Le materiel `B` a renvoyé des informations vers `PC3` indiquant qu'il ne trouve pas l'IP `10.11.80.2`
+
+## Q.3.21
+
+Source : Nom `PC4` IP `10.10.4.2`
+Destination ! Nom Inconnu IP `172.16.5.253`
+
+## Q.3.22
+
+MAC Source : `CA:01:DA:D2:00:1C`
+MAC Destination : `CA:03:9E:EF:00:38`
+J'en déduis que c'est une communication entre le materiel `B` et `R2`
+
+## Q.3.23
+
+Cette communication a été enregsitrer dans le réseau `10.12.2.0/24`
 
 
 
